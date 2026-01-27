@@ -242,7 +242,7 @@ about building scalable, user-centered solutions.
                   }}
                 >
                   <img
-                    src="/public/profile.jpg"
+                    src="/profile.jpg"
                     alt="Santiago Murillo"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '20% 20%' }}
                     onError={(e) => {
