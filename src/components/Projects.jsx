@@ -107,6 +107,19 @@ const projects = [
     githubUrl: 'https://github.com/santimuri08/Flower-website-.git',
     featured: false,
   },
+  {
+  id: 9,
+  title: 'StudyAI',
+  subtitle: 'AI Academic Productivity Platform',
+  shortDescription: 'An AI-powered platform that helps college students break down assignments, manage study schedules, and get real-time academic help via Claude AI.',
+  fullDescription: 'An AI-powered academic productivity platform built with Next.js, TypeScript, and Tailwind CSS. Students paste assignment text and Claude AI generates a structured breakdown with summaries, task lists, time estimates, and deadline detection. Features a drag-and-drop study calendar, an AI chat assistant for real-time academic questions, and a dashboard with progress tracking. Integrated with the Anthropic API for assignment analysis and streaming chat responses.',
+  image: '/images/studyai.png',
+  tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Claude AI', 'Framer Motion'],
+  category: 'AI',
+  liveUrl: 'https://studyai-indol.vercel.app',
+  githubUrl: 'https://github.com/santimuri08/studyai',
+  featured: true,
+},
 ]
 
 const categories = ['All', 'Web', 'Mobile', 'AI', 'Games']
