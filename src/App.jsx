@@ -1,12 +1,13 @@
-import { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Certificates from './components/Certificates'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { useEffect, lazy, Suspense } from 'react'
+
+const Navbar = lazy(() => import('./components/Navbar'))
+const Hero = lazy(() => import('./components/Hero'))
+const About = lazy(() => import('./components/About'))
+const Skills = lazy(() => import('./components/Skills'))
+const Projects = lazy(() => import('./components/Projects'))
+const Certificates = lazy(() => import('./components/Certificates'))
+const Contact = lazy(() => import('./components/Contact'))
+const Footer = lazy(() => import('./components/Footer'))
 
 function App() {
   useEffect(() => {
@@ -58,16 +59,36 @@ function App() {
       />
       
       {/* Content */}
-      <div className="relative z-10">
-        <Navbar />
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Certificates />
-        <Contact />
-        <Footer />
-      </div>
+      <Suspense fallback={
+        <div style={{ 
+          background: '#0F172A', 
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            border: '3px solid rgba(59, 130, 246, 0.2)',
+            borderTop: '3px solid #3B82F6',
+            borderRadius: '50%',
+            animation: 'spin 0.8s linear infinite'
+          }} />
+          <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
+        </div>
+      }>
+        <div className="relative z-10">
+          <Navbar />
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Certificates />
+          <Contact />
+          <Footer />
+        </div>
+      </Suspense>
     </div>
   )
 }
